@@ -2,7 +2,6 @@ import React from 'react';
 
 import './styles.css'
 
-import '../../assets/styles/global.css'
 
 import logoimg from '../../assets/images/logo.svg';
 import landingimg from '../../assets/images/landing.svg'
@@ -27,7 +26,7 @@ function Landing () {
            className="hero-image"
            />
 
-           <div className="buttons-container">
+          <div className="buttons-container">
            <a href="" className="study">
            <img src={studyIcon} alt=""/>
             Estudar
@@ -35,16 +34,16 @@ function Landing () {
 
            
            <a href="" className="give-classes">
-           <img src={giveClassesIcon} alt=""/>
-            Estudar
+            <img src={giveClassesIcon} alt=""/>
+             Estudar
            </a>
-           </div>
-            
+          </div>
+
            <span className="total-connections">
                 Total de 200 conexões já realizadas <img src={purpleHeartIcon} alt="Coração roxo"/>
            </span>
 
-          </div>  
+           </div>  
         </div> 
     ) 
 }
