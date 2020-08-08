@@ -34,7 +34,7 @@ function Landing () {
            </Link>
 
            
-           <Link to="/study" className="give-classes">
+           <Link to="/give-classes" className="give-classes">
             <img src={giveClassesIcon} alt="Dar Aulas"/>
              Dar Aulas
            </Link>
