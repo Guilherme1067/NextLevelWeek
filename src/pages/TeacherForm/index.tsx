@@ -41,7 +41,6 @@ function TeacherForm () {
 
       function setScheduleItemValue(postion: number, field: string, value: string){
         const updateScheduleItems = scheduleItems.map((scheduleItem, index) => {
-
           if(postion === index){
             return {...scheduleItem, [field]: value}
           }
@@ -54,20 +53,19 @@ function TeacherForm () {
       function handleCreateClasse(e: FormEvent){
         e.preventDefault();
 
-        api.post('classes',  {
-          name,
-          avatar,
-          whatsapp,
-          bio,
-          subject,
-          cost: Number(cost),
-          schedule: scheduleItems
+        api.post('classes',{
+             name,
+             avatar,
+             whatsapp,
+             bio,
+             subject,
+             cost: Number(cost),
+             schedule: scheduleItems
         }).then(() => {
-
-          alert('Cadastro efetuado com Sucesso')
-          history.push("/")
+             alert('Cadastro efetuado com Sucesso')
+             history.push("/")
         }).catch(() => {
-          alert("Erro no cadastro")
+             alert("Erro no cadastro")
         })
       }
 
@@ -83,28 +81,28 @@ function TeacherForm () {
           <fieldset>
             <legend>Seus Dados</legend>
             <Input 
-            name="name" 
-            label="Nome Completo" 
-            value={name} 
-            onChange={(e) => { setName(e.target.value)}}
+               name="name" 
+               label="Nome Completo" 
+               value={name} 
+               onChange={(e) => { setName(e.target.value)}}
             />
             <Input
-             name="avatar" 
-             label="Avatar"
-             value={avatar}
-             onChange={(e) => {setAvatar(e.target.value)}}
+               name="avatar" 
+               label="Avatar"
+               value={avatar}
+               onChange={(e) => {setAvatar(e.target.value)}}
             />
             <Input 
-            name="whatsapp" 
-            label="WhatsApp"
-            value={whatsapp}
-            onChange={(e) => setWhatspp(e.target.value)}
+               name="whatsapp" 
+               label="WhatsApp"
+               value={whatsapp}
+               onChange={(e) => setWhatspp(e.target.value)}
             />
             <Textarea 
-            name="bio" 
-            label="Biografia"
-            value={bio}
-            onChange={(e) => setBio(e.target.value)}
+               name="bio" 
+               label="Biografia"
+               value={bio}
+               onChange={(e) => setBio(e.target.value)}
             />
           </fieldset>
 
@@ -112,26 +110,26 @@ function TeacherForm () {
             <legend>Sobre a aula</legend>
 
             <Select 
-            name="subject" 
-            label="Matéria"
-            value={subject}
-            onChange={(e) => {setSubject(e.target.value)}}
-            options={[
-              {value:'Artes', label:'Artes' },
-              {value:'Biologia', label:'Biologia' },
-              {value:'Física', label:'Física' },
-              {value:'Geografia', label:'Geografia' },
-              {value:'História', label:'História' },
-              {value:'Matemática', label:'Matemática' },
-              {value:'Português', label:'Português' },
-              {value:'Química', label:'Química' },
+              name="subject" 
+              label="Matéria"
+              value={subject}
+              onChange={(e) => {setSubject(e.target.value)}}
+              options={[
+                {value:'Artes', label:'Artes' },
+                {value:'Biologia', label:'Biologia' },
+                {value:'Física', label:'Física' },
+                {value:'Geografia', label:'Geografia' },
+                {value:'História', label:'História' },
+                {value:'Matemática', label:'Matemática' },
+                {value:'Português', label:'Português' },
+                {value:'Química', label:'Química' },
             ]}
             />
             <Input 
-            name="cost" 
-            label="Custa da sua Hora por aula"
-            value={cost}
-            onChange={(e) => setCost(e.target.value)}
+               name="cost" 
+               label="Custa da sua Hora por aula"
+               value={cost}
+               onChange={(e) => setCost(e.target.value)}
             />
           </fieldset>
            
@@ -161,18 +159,20 @@ function TeacherForm () {
                       ]}
                   />
                     <Input 
-                    name="from" 
-                    label="Das"
-                    type="time"
-                    value={scheduleItem.from}
-                    onChange={e => setScheduleItemValue(index, 'from', e.target.value )}                     />
+                      name="from" 
+                      label="Das"
+                      type="time"
+                      value={scheduleItem.from}
+                      onChange={e => setScheduleItemValue(index, 'from', e.target.value )}       
+                     />
 
                     <Input 
-                    name="to"   
-                    label="Até"
-                    type="time"
-                    value={scheduleItem.to}
-                    onChange={e => setScheduleItemValue(index, 'to', e.target.value )}                     />
+                      name="to"   
+                      label="Até"
+                      type="time"
+                      value={scheduleItem.to}
+                      onChange={e => setScheduleItemValue(index, 'to', e.target.value )}
+                    />
                 </div>
                   )}
                   )}
